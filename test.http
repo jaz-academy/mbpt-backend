@@ -1,0 +1,76 @@
+### Create Result
+POST http://localhost:3000/api/results
+Content-Type: application/json
+
+{
+  "answers": {},
+  "scores": {
+    "vision": 20,
+    "fear": 40,
+    "validation": 60,
+    "meaning": 70
+  },
+  "profile": "vision+fear",
+  "name": "abukafa",
+  "email": "hikam.abukafa@gmail.com"
+}
+
+### Get All Result
+GET http://localhost:3000/api/results
+
+
+### Get Result by ID
+GET http://localhost:3000/api/results/e52d4ead-9e3c-433e-a68b-257b10d0db07
+
+
+### Download PDF Result
+GET http://localhost:3000/api/results/e52d4ead-9e3c-433e-a68b-257b10d0db07/pdf
+
+
+### Send Result by Email
+POST http://localhost:3000/api/results/e52d4ead-9e3c-433e-a68b-257b10d0db07/send
+
+
+### Create Question
+POST http://localhost:3000/api/questions
+Content-Type: application/json
+
+{
+  "segment": "kids",
+  "text": "I work for my future",
+  "motivation": "vision",
+  "weight": 1,
+  "order": 1
+}
+
+### Update Question
+PATCH http://localhost:3000/api/questions/41
+Content-Type: application/json
+
+{
+  "segment": "kids",
+  "text": "I work for my future",
+  "motivation": "vision",
+  "weight": 2,
+  "order": 1
+}
+
+### Get All Questions
+GET http://localhost:3000/api/questions
+
+
+### Get Question by ID
+GET http://localhost:3000/api/questions/4
+
+
+### Delete Question
+DELETE http://localhost:3000/api/questions/1
+
+### Get Introduction (Adult)
+GET http://localhost:3000/api/introduction?segment=kids&locale=id
+
+### Get Questions (EN)
+GET http://localhost:3000/api/questions?locale=id
+
+### Get Result Profile (Adult)
+GET http://localhost:3000/api/result-profiles/fear+vision?segment=kids&locale=id
